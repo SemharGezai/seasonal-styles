@@ -73,6 +73,18 @@ li.seasons a {
    <main class="wrapper">
     <header><h3>Outfitter for All Seasons!</h3></header>
     <p>
+        <form id="dateForm">
+        <label for="dateField">
+            Input Date:<input type="text" name="dateField" id="dateField" />
+        </label>
+            <input type="submit" value="submit" />
+        </form>
+     </p>
+
+     <p>
+        This page using jQuery: Type in a date in the box. 
+     </p>
+    <p>
     The colors of the seasonal images are as follows:
         <ul class="colors">
             <li>Spring: <b>#2B7129</b></li>
@@ -108,60 +120,55 @@ Winter: #005393
       $("document").ready(function(){
           $("li.seasons a ").click(function(e){
               e.preventDefault();
+            var datetext = $('input[name=dateField]').val();//grab data from textbox
+			var formDate = new Date(datetext);//create a date from form input
+			var today = new Date();
+            var month = formDate.getMonth();
 
-              let season = $(this).attr("href");
+switch(month){
+    case 0:
+    case 1:
+    case 2:
+        //winter
+        $("#logo").attr("src","images/winter.gif");
+        $("#wear").attr("src","images/winter-wear.jpg");
+        $("html").css("background-color", "#005393")
+        alert("Baby its cold outside.");
+    break; 
+    
+    case 3:
+    case 4:
+    case 5:
+        //spring
+        $("#logo").attr("src","images/spring.gif");
+        $("#wear").attr("src","images/spring-wear.jpg");
+        $("html").css("background-color", "#2B7129")
+        alert("Temperature's Rising!");
+    break;   
+        
+    case 6:
+    case 7:
+    case 8:               
+        //summer
+        $("#logo").attr("src","images/summer.gif");
+        $("#wear").attr("src","images/summer-wear.jpg");
+        $("html").css("background-color", "#EBA52B")
+        alert("It's getting hot in here");
+    break; 
 
-              if (season == "Default"){
-                $("#logo").attr("src", "images/four-seasons.gif");
 
-                $("#wear").attr("src", "images/300x400.png");
-
-                $("html").css("background-color", "#ccc");
-
-                alert("You clicked on the Default page, BORING!");
-              }
-
-              if (season == "Spring"){
-                $("#logo").attr("src", "images/spring.gif");
-
-                $("#wear").attr("src", "images/spring-wear.jpg");
-
-                $("html").css("background-color", "#2B7129");
-
-                alert("Temperature's Rising!");
-              }
-
-              if (season == "Summer"){
-                $("#logo").attr("src", "images/summer.gif");
-
-                $("#wear").attr("src", "images/summer-wear.jpg");
-
-                $("html").css("background-color", "#EBA52B");
-
-                alert("It's getting hot in here!");
-              }
-
-              if (season == "Fall"){
-                $("#logo").attr("src", "images/fall.gif");
-
-                $("#wear").attr("src", "images/fall-wear.jpg");
-
-                $("html").css("background-color", "#A81124");
-
-                alert("Ready for the crunchy leaves.");
-              }
-
-              if (season == "Winter"){
-                $("#logo").attr("src", "images/winter.gif");
-
-                $("#wear").attr("src", "images/winter-wear.jpg");
-
-                $("html").css("background-color", "#005393");
-
-                alert("Baby its cold outside.");
-              }
-
-            //   alert("I'm clicked!");
+    case 9:
+    case 10:
+    case 11:
+        //fall
+        $("#logo").attr("src","images/fall.gif");
+        $("#wear").attr("src","images/fall-wear.jpg");
+        $("html").css("background-color", "#A81124")
+        alert("Ready for the crunchy leaves.");
+    break;   
+}
+        alert(season);
+        //alert("I'm clicked!");
           });
       });
   </script>
