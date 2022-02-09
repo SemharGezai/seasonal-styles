@@ -58,33 +58,23 @@ li.seasons a {
 	<header role="banner">
 	    <img src="images/four-seasons.gif" alt="Seasonal Logo Goes Here" class="flexible" id="logo" />
 		<h1 class="masthead">Eddie Browser</h1>
-    <h5>This page uses jQuery to change the logo, picture, and background color based on the Season you click on in the Navigation bar.</h5>
-		<nav>
-			<ul>
-				<li class="seasons"><a href="Default">Default</a></li>
-				<li class="seasons"><a href="Spring">Spring</a></li>
-				<li class="seasons"><a href="Summer">Summer</a></li>
-				<li class="seasons"><a href="Fall">Fall</a></li>
-				<li class="seasons"><a href="Winter">Winter</a></li>
-			</ul>
-		</nav>
-	</header>
-     
-   <main class="wrapper">
-    <header><h3>Outfitter for All Seasons!</h3></header>
-    <p>
+    </header>
+        <h5>This page uses jQuery to change the logo, picture, and background color based on the Season you click on in the Navigation bar.</h5>
+   
+    <main class="wrapper">
+     <header><h3>Outfitter for All Seasons!</h3></header>
+      <p>
         <form id="dateForm">
         <label for="dateField">
             Input Date:<input type="text" name="dateField" id="dateField" />
         </label>
             <input type="submit" value="submit" />
         </form>
-     </p>
-
-     <p>
-        This page using jQuery: Type in a date in the box. 
-     </p>
+      </p>
     <p>
+        This page using jQuery: Type in a date in the box. 
+    </p>
+     <p>
     The colors of the seasonal images are as follows:
         <ul class="colors">
             <li>Spring: <b>#2B7129</b></li>
@@ -92,7 +82,7 @@ li.seasons a {
             <li>Fall: <b>#A81124</b></li>
             <li>Winter: <b>#005393</b></li>
         </ul>
-    </p>
+     </p>
     <p>
     <img src="images/300x400.png" alt="Season Wear Goes Here" id="wear" />
     </p>
@@ -125,7 +115,7 @@ li.seasons a {
                 $("#logo").attr("src","images/winter.gif");
                 $("#wear").attr("src","images/winter-wear.jpg");
                 $("html").css("background-color", "#005393")
-                alert("It's getting hot in here!");
+                alert("It's cold outside!");
             break; 
             
             case 3:
