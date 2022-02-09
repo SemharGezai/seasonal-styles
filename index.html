@@ -109,67 +109,61 @@ li.seasons a {
   </main>
   <script src="js/main.js"></script>
   <script>
-/*
-change the src of the img with an id of logo
-change the src of the img with an id of wear
-Spring: #2B7129
-Summer: #EBA52B
-Fall: #A81124
-Winter: #005393
-*/
-    $("document").ready(function(){
+	$("document").ready(function(){
 		$('#dateForm').submit(function(e){//handle form submission event
             e.preventDefault();//stop default submission
 			var datetext = $('input[name=dateField]').val();//grab data from textbox
 			var formDate = new Date(datetext);//create a date from form input
 			var today = new Date();
             var month = formDate.getMonth();
-    switch(month){
-        case 0:
-        case 1:
-        case 2:
-            //winter
-            $("#logo").attr("src","images/winter.gif");
-            $("#wear").attr("src","images/winter-wear.jpg");
-            $("html").css("background-color", "#005393")
-            alert("Baby its cold outside.");
-        break; 
-        
-        case 3:
-        case 4:
-        case 5:
-            //spring
-            $("#logo").attr("src","images/spring.gif");
-            $("#wear").attr("src","images/spring-wear.jpg");
-            $("html").css("background-color", "#2B7129")
-            alert("Temperature's Rising!");
-        break;   
+
+        switch(month){
+            case 0:
+            case 1:
+            case 2:
+                //winter
+                $("#logo").attr("src","images/winter.gif");
+                $("#wear").attr("src","images/winter-wear.jpg");
+                $("html").css("background-color", "#005393")
+                alert("It's getting hot in here!");
+            break; 
             
-        case 6:
-        case 7:
-        case 8:               
-            //summer
-            $("#logo").attr("src","images/summer.gif");
-            $("#wear").attr("src","images/summer-wear.jpg");
-            $("html").css("background-color", "#EBA52B")
-            alert("It's getting hot in here");
-        break; 
+            case 3:
+            case 4:
+            case 5:
+                //spring
+                $("#logo").attr("src","images/spring.gif");
+                $("#wear").attr("src","images/spring-wear.jpg");
+                $("html").css("background-color", "#2B7129")
+                alert("Temperature's Rising!");
+            break;   
+                
+            case 6:
+            case 7:
+            case 8:               
+                //summer
+                $("#logo").attr("src","images/summer.gif");
+                $("#wear").attr("src","images/summer-wear.jpg");
+                $("html").css("background-color", "#EBA52B")
+                alert("It's getting hot in here!");
+            break; 
 
 
-        case 9:
-        case 10:
-        case 11:
-            //fall
-            $("#logo").attr("src","images/fall.gif");
-            $("#wear").attr("src","images/fall-wear.jpg");
-            $("html").css("background-color", "#A81124")
-            alert("Ready for the crunchy leaves.");
-        break;   
-    }
-        alert(season);
-        //alert("I'm clicked!");
-          });
-      });
-  </script>
+            case 9:
+            case 10:
+            case 11:
+                //fall
+                $("#logo").attr("src","images/fall.gif");
+                $("#wear").attr("src","images/fall-wear.jpg");
+                $("html").css("background-color", "#A81124")
+                alert("Ready for the crunchy leaves!");
+            break;   
+        }
+                alert(season);
+                //alert("I'm clicked!");
+           });
+       });
+
+   </script>
   </body>
 </html>
